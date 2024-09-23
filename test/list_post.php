@@ -47,5 +47,5 @@ $post = $postRepository->findOneBy(['titre'=> "VDI - Je vais voir PIDI"]); // SE
 if ($post) {
     echo "- ".$post->getTitre()."\n \n";
 }else{
-    echo "Aucun post n'existe pour cet ID \n";
+    echo "Aucun post n'existe pour ce titre \n";
 }
