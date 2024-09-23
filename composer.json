@@ -2,7 +2,7 @@
     "name": "michelint/doctrine-php",
     "autoload": {
         "psr-4": {
-            "APP\\": "src/"
+            "App\\": "src/"
         }
     },
     "authors": [

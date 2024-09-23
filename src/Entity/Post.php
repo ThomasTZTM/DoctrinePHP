@@ -15,8 +15,8 @@ class Post
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     #[ORM\Id] // Clé primaire
-    #[ORM\column(name: "id_post", type: 'integer')] // On dit ou ce trouve la clé primaire et le nom associer dans la BDD
-    #[ORM\GeneratedValue(strategy: 'AUTO')] // Et on la met en autoIncrement
+    #[ORM\Column(name: "id_post", type: 'integer')] // On dit ou ce trouve la clé primaire et le nom associer dans la BDD
+    #[ORM\GeneratedValue]
     private int $id;
 
 
@@ -28,7 +28,7 @@ class Post
     private string $contenu;
 
 
-    #[ORM\Column(name: "date_post", type: 'datetime', nullable: false)]
+    #[ORM\Column(name: "date_creation_post", type: 'datetime', nullable: false)]
     private \DateTime $createdAt;
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
