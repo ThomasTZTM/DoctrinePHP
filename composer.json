@@ -11,5 +11,9 @@
             "email": "lemoderateurdelive@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "doctrine/orm": "^3.2",
+        "doctrine/dbal": "^4.1",
+        "symfony/cache": "^7.1"
+    }
 }
