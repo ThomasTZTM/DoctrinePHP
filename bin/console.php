@@ -1,0 +1,20 @@
+<?php
+
+// Récupération de l'EntityManager
+
+use Doctrine\ORM\Tools\Console\ConsoleRunner;
+use Doctrine\ORM\Tools\Console\EntityManagerProvider\SingleManagerProvider;
+
+/**
+ * @var \Doctrine\ORM\EntityManager $entityManager
+ */
+$entityManager = require_once __DIR__ . "/../config/bootstrap.php";
+
+
+echo PHP_EOL; // Pour de l'affichage
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////// Parametre de la console //////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ConsoleRunner::run(new SingleManagerProvider($entityManager));
