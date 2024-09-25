@@ -52,3 +52,21 @@ foreach ($LesPosts as $post) {
     echo "- ".$post->getTitre(). "\n";
 }
 echo PHP_EOL;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////// Lister les 3 posts les plus récent /////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+echo "\n Les 3 posts les plus récent sont : \n";
+
+$dql = "SELECT p FROM App\Entity\Post p ORDER BY p.createdAt DESC";
+// Création d'un objet "Requête" de la classe Query
+$query = $entityManager->createQuery($dql);
+$query->setMaxResults(3);
+//echo $query->getSQL(); // Pour afficher la requete SQL
+// Execution de la requete avec le mapping des enregistrement en objet Post
+$LesPosts=$query->getResult();
+foreach ($LesPosts as $post) {
+    echo "- ".$post->getTitre(). "\n";
+}
+echo PHP_EOL;
