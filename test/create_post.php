@@ -20,9 +20,10 @@ echo PHP_EOL; // Pour de l'affichage
 // On créer le post
 
 $post = new Post();
-$post->setTitre("VDI - Le mont evrest est facile à monter");
+$post->setTitre("VDI - Episode 461");
 $post->setContenu("Un nouveau contenu");
 $post->setCreatedAt(new \DateTime());
+$post->setNbLikes(17563);
 
 // Demander à l'entityManager de persister l'entité $post dans la table posts
 

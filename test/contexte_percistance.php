@@ -19,7 +19,7 @@ echo PHP_EOL; // Pour de l'affichage
 
 $post = $entityManager
     ->getRepository(Post::class)
-    ->find(9); // On choisi de victime l'id 9 ici
+    ->find(1); // On choisi de victime l'id 1 ici
 
 $contextePercistance = $entityManager->getUnitOfWork();
 echo $contextePercistance->getEntityState($post)."\n"; // 1 MANAGED
