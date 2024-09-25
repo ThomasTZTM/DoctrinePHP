@@ -43,8 +43,9 @@ $DateChoisie = DateTime::createFromFormat("d/m/Y", "01/07/2024" );
 $dql = "SELECT p FROM App\Entity\Post p WHERE p.createdAt > :DateChoisie ORDER BY p.createdAt ASC";
 // Création d'un objet "Requête" de la classe Query
 $query = $entityManager->createQuery($dql);
-// Donner une valeur au parametre ":nbLikex)
+// Donner une valeur au parametre ":DateChoisie)
 $query->setParameter(":DateChoisie", $DateChoisie);
+//echo $query->getSQL(); // Pour afficher la requete SQL
 // Execution de la requete avec le mapping des enregistrement en objet Post
 $LesPosts=$query->getResult();
 foreach ($LesPosts as $post) {
