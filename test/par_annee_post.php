@@ -35,5 +35,17 @@ $LesPosts=$query->getResult();
 print_r($LesPosts);
 echo PHP_EOL;
 
+echo "\n Les posts parue en 2024 : \n";
+
+//$db = $entityManager->createQueryBuilder();
+//$postsParMois = $db->select(select: 'COUNT(p.id) as nbPosts, SUBSTRING(p.createdAt, 6, 2) as mois')
+    //->from('App\Entity\Post', 'p')
+    //->where('SUBSTRING(p.createdAt, 1, 4) = :annee')
+    //->setParameter('annee', value: 2024)
+    //->GroupBy('mois')
+    //->orderBy('mois', 'ASC')
+    //->getQuery()
+    //->getResult();
+//print_r($postsParMois);
 
 
