@@ -14,21 +14,25 @@ $entityManager = require_once __DIR__ . "/../config/bootstrap.php";
 echo PHP_EOL; // Pour de l'affichage
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////// Obtenir les post dont le nombre de like est inférieur à X /////////////////////////////
+/////////////////////////////////////////// ID DU POST ////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-echo "\n Les posts dont le nb de likes sont inférieurs à 2000 sont : \n";
+$idrecherche = 2;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////// Obtenir le post dont l'id de recherche est X /////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+echo "Le nb de like dont ID post = $idrecherche est : \n";
 // Création d'un objet de la classe queryBuilder
 $qb = $entityManager->createQueryBuilder();
-$qb->select('p')
+$qb->select('p.nbLikes')
     ->from('App\Entity\Post', 'p')
-    ->where('p.nbLikes < :nblikeX')
-    ->setParameter("nblikeX", 2000); // 2000 est le nombre X
+    ->where('p.id = :idrecherche')
+    ->setParameter("idrecherche", $idrecherche); // idrecherche est le nombre 2
 // Création d'un objet query à partir du queryBuilder
 $query = $qb->getQuery(); // $query est un objet qui contient mtn la requete en DQL
 // Execution de la requete
 $posts = $query->getResult();
-foreach ($posts as $post) {
-    echo "- ".$post->getTitre() . " Qui à seulement ". $post->getNbLikes() . " likes\n";
-}
+echo $posts;
 
