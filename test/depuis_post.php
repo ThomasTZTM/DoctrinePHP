@@ -49,7 +49,8 @@ $dql = "
         SELECT p 
         FROM App\Entity\Post p 
         WHERE p.createdAt > :DateChoisie 
-        ORDER BY p.createdAt ASC";
+        ORDER BY p.createdAt DESC
+        ";
 // Création d'un objet "Requête" de la classe Query
 $query = $entityManager->createQuery($dql);
 // Donner une valeur au parametre ":DateChoisie)
